@@ -1,0 +1,13 @@
+@use './variables/variables.scss' as *;
+
+
+.bold {
+  background: repeating-linear-gradient(to right, #5390d9 0% 5%, #4ea8de 5% 10%);
+  font-weight: 200;
+  border: 4px solid $highlight;
+  font-size: 18px;
+  text-shadow: 3px 4px 2px rgb(133, 125, 125);
+  color: #160303;
+  padding: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

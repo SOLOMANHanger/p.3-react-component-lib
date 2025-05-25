@@ -1,0 +1,63 @@
+@use './variables/variables.scss' as *;
+
+section {
+    border: 2px solid $softy;
+
+    background: linear-gradient(40deg, $softy 50%, $baser 10%, $pop 100%);
+    color: $baser;
+
+    & h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: $baser;
+        border: 1px solid $soft;
+        padding: 0.5rem;
+        background-color: $highlight;
+        opacity: 75%;
+        text-shadow: 2px 1px 1px rgba(243, 213, 237, 0.788);
+    }
+}
+
+.pricing {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 70rem;
+    padding: 4rem 1rem;
+}
+
+.card {
+    background: repeating-linear-gradient(to right, #5390d9 0% 5%, #4ea8de 5% 10%);
+    transition: all 0.2s ease;
+    box-shadow: 1px 31px 15px $toots;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 15px 1px 15px $highlight;
+    }
+
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+
+    &__price {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    &__btn {
+        background: $highlight;
+        border: none;
+        padding: 0.5rem 1.25rem;
+        border-radius: 0.25rem;
+        color: $light;
+        cursor: pointer;
+    }
+}
+
+@media (width > $md) {
+    .pricing {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,0 +1,159 @@
+@use './components/variables/variables.scss' as *;
+@use './components/Hero.module.scss' as *;
+@use './components/NavBar.module.scss' as *;
+@use './components/Pricing.module.scss' as *;
+@use './components/Footer.module.scss' as *;
+@use './pages/about/Main.module.scss' as *;
+// Importing mixins for reusability
+
+
+.hero {
+  @include hero();
+}
+
+.hero-main-cta {
+  @include hero-main();
+
+}
+
+.hero-main-title {
+  @include hero();
+}
+
+h2 {
+  @include hero-main();
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+//------------------Global Styles-------------------
+// Typography
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: $light;
+  background: linear-gradient(135deg, $lines 40%, $soft 100%);
+  font-size: 16px;
+}
+
+// Get footer to the bottom
+html,
+#root,
+body {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+//? -------------------Component Styles-------------------
+
+// Nav Styles
+.navbar {
+  padding: 1rem 2rem;
+  background: $highlight;
+
+  &__links {
+    display: none;
+    gap: 1.5rem;
+
+    a {
+      color: $light;
+      text-decoration: none;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: $highlight;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__cta {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    color: $light;
+    background: $highlight;
+    cursor: pointer;
+  }
+}
+
+.nav--mobile {
+  display: none;
+}
+
+@media (width > $md) {
+  .nav__links {
+    display: flex;
+  }
+
+}
+
+
+// Hero Styles
+// 
+
+.pricing {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 70rem;
+  padding: 4rem 1rem;
+}
+
+.card {
+  background: repeating-linear-gradient(to right, $highlight 0% 5%, $lines 25% 100%);
+  transition: all 0.2s ease;
+  box-shadow: 1px 31px 15px $toots;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 15px 1px 15px $highlight;
+  }
+
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+
+  &__price {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+
+  &__btn {
+    background: $highlight;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.25rem;
+    color: $light;
+    cursor: pointer;
+  }
+}
+
+@media (width > $md) {
+  .pricing {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Footer styles
+.footer {
+  background: $soft;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+}

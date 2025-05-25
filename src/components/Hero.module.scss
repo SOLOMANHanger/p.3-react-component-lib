@@ -1,0 +1,48 @@
+// Hero Styles
+@use './variables/variables.scss' as *;
+
+
+// src/components/variables/mixins.scss
+@mixin hero($bg: linear-gradient(135deg, $soft 50%, $base 10%, $highlight 100%),
+    $padding: .5rem 1rem) {
+    background: $bg;
+    text-shadow: 4px 3px 2px $base;
+    text-align: center;
+    padding: $padding;
+    font-size: 37px;
+    text-shadow: 3px 5px 3px $lines;
+
+    &__title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 1rem;
+    }
+
+    &__subtitle {
+        margin: 0 auto 2rem;
+        text-shadow: 2px .5px 11px rgba(255, 0, 191, 0.788);
+    }
+
+    &__cta {
+        background: $highlight;
+        box-shadow: 1px 31px 15px $shadow;
+        border: 1.5px dotted #fd4179;
+        border-radius: 13px 3px 4px 3px;
+        color: $light;
+        padding: 0.75rem 1.5rem;
+        font-size: 2rem;
+        ;
+        text-decoration: none;
+        text-shadow: 2px 1px 1px rgba(255, 0, 191, 0.788);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            transform: translateY(-11px);
+            box-shadow: 1px 31px 15px $shadow;
+            border: 1.5px dotted #fd4179;
+            border-radius: 13px 3px 4px 3px;
+            color: $light;
+        }
+    }
+}
